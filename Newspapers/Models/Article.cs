@@ -30,5 +30,11 @@ namespace Newspapers.Models
             return articleCollection.AsQueryable<Article>().ToList();
         }
 
+        public Article find(string id)
+        {
+            var articleId = new ObjectId(id);
+            return articleCollection.AsQueryable<Article>().SingleOrDefault(a => a.Id == articleId);
+        }
+
     }
 }

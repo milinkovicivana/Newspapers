@@ -18,5 +18,14 @@ namespace Newspapers.Controllers
 
             return View(articles);
         }
+
+        public IActionResult Details(string id)
+        {
+            var art = article.find(id);
+
+            return View(art);
+        }
+
+
     }
 }

@@ -22,8 +22,8 @@ else
             @foreach (var article in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(article.Title, "Details", "Customers", new { id = article.Id }, null)</td>
-                    <td>@article.Body</td>
+                    <td>@Html.ActionLink(article.Title, "Details", "Articles", new { id = article.Id }, null)</td>
+                    <td>@article.Body.Substring(0, article.Body.Length / 2)</td>
                 </tr>
             }
         </tbody>
