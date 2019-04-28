@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Newspapers.Models.Article>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have articles yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var article in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(article.Title, "Details", "Customers", new { id = article.Id }, null)</td>
+                    <td>@article.Body</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
