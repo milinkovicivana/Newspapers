@@ -36,5 +36,24 @@ namespace Newspapers.Models
             return articleCollection.AsQueryable<Article>().SingleOrDefault(a => a.Id == articleId);
         }
 
+        public void create(Article article)
+        {
+            articleCollection.InsertOne(article);
+        }
+
+        public void update(Article article)
+        {
+            articleCollection.UpdateOne(
+                Builders<Article>.Filter.Eq("_id", article.Id),
+                Builders<Article>.Update.Set("Title", article.Title)
+                                        .Set("Body", article.Body)
+            );
+        }
+
+        public void delete(string id)
+        {
+            articleCollection.DeleteOne(Builders<Article>.Filter.Eq("_id", ObjectId.Parse(id)));
+        }
+
     }
 }
