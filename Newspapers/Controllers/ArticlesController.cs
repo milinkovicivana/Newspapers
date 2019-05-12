@@ -15,7 +15,7 @@ namespace Newspapers.Controllers
 
         public IActionResult Index()
         {
-            var articles = article.findAll();
+            var articles = article.findAll().OrderByDescending(a => a.Id);
 
             return View(articles);
         }
