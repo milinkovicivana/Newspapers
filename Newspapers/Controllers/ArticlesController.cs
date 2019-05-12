@@ -52,7 +52,7 @@ namespace Newspapers.Controllers
             var articleId = new ObjectId(id);
             a.Id = articleId;
             article.update(a);
-            return RedirectToAction("Index", "Articles");
+            return RedirectToAction("Details", "Articles", new { id = id});
         }
 
         public IActionResult Delete(string id)

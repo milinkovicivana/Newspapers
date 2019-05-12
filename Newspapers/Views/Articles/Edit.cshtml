@@ -1,7 +1,21 @@
-﻿
+﻿@model Newspapers.Models.Article
+
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit news</h2>
+
+<form method="post" asp-controller="Articles" asp-action="edit">
+    <h4>Title: </h4><textarea type="text" asp-for="Title" name="title" style="width:900px;height:50px;"></textarea>
+    <br>
+    <h4>Body: </h4><textarea type="text" asp-for="Body" name="body" style="width:900px; height:300px;"></textarea>
+    <br>
+    <input type="submit" value="Edit" class="button">
+    <input type="hidden" asp-for="Id">
+
+</form>
+
+
+
 

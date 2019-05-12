@@ -1,7 +1,14 @@
-﻿
+﻿@model Newspapers.Models.Article
 @{
     ViewData["Title"] = "Add";
 }
 
-<h2>Add</h2>
+<h2>Add news</h2>
 
+<form method="post" asp-controller="Articles" asp-action="add">
+    <h4>Title: </h4><textarea type="text" asp-for="Title" name="title" style="width:900px;height:50px;"></textarea>
+    <br>
+    <h4>Body: </h4><textarea type="text" asp-for="Body" name="body" style="width:900px; height:300px;"></textarea>
+    <br>
+    <input type="submit" value="Submit" class="button">
+</form>

@@ -7,3 +7,7 @@
 
 <p>@Model.Body</p>
 
+<a asp-contoller="Articles" asp-action="delete" asp-route-id="@Model.Id" onclick="return confirm('Are you sure?')" class="button a-white">Delete</a>
+<a asp-contoller="Articles" asp-action="edit" asp-route-id="@Model.Id" class="button a-white">Edit</a>
+
+
